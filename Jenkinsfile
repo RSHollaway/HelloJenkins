@@ -1,12 +1,28 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent any 
+    agent any
+    options {
+        skipDefaultCheckout(true)
+    }
     stages {
-        stage('Stage 1') {
+        stage('Build') {
             steps {
-                echo 'Hello Jenkins!!' 
+                cleanWs()
+                checkout scm
+                echo 'Building ${env.JOB_NAME}...' 
             }
+        }
+    }
+    post {
+        always {
+            cleanWs(cleanWhenNotBuilt: false,
+                    deleteDirs: true,
+                    disableDeferredWipeout: true,
+                    notFailBuild: true,
+                    patterns: [[pattern: '.gitignore', type: 'INCLUDE'],
+                               [pattern: '.propsfile', type: 'EXCLUDE']])
+        }
         }
     }
 }
