@@ -1,15 +1,11 @@
-pipeline {
-    agent any
-    stages {
-        stage('Deploy') {
-            steps {
-                retry(3) {
-                    sh './flakey-deploy.sh'
-                }
+#!/usr/bin/env groovy
 
-                timeout(time: 3, unit: 'MINUTES') {
-                    sh './health-check.sh'
-                }
+pipeline {
+    agent any 
+    stages {
+        stage('Stage 1') {
+            steps {
+                echo 'Hello Jenkins!!' 
             }
         }
     }
