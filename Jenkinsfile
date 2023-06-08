@@ -48,7 +48,7 @@ pipeline {
         stage('Get Uptime - PowerShell') {
             steps {
                 echo "Get Uptime with PowerShell"
-                pwsh 'get-uptime | format table'
+                pwsh 'get-uptime | format-table'
             }
         }
     }
