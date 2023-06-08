@@ -6,7 +6,7 @@ pipeline {
         skipDefaultCheckout(false)
     }
     stages {
-        stage('CheckOut') {
+        stage('Clean WorkSpace') {
             steps {
                 cleanWs()
                 checkout scm 
