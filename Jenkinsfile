@@ -32,7 +32,7 @@ pipeline {
             steps {
                 echo "Pinging Localhost with bash"
                 sh 'ping -c 5 127.0.0.1'
-            }
+            }}
         stage('Ping Local Host - PowerShell') {
             steps {
                 echo "Pinging Localhost with PowerShell"
@@ -50,4 +50,4 @@ pipeline {
                                [pattern: '.propsfile', type: 'EXCLUDE']])
         }
         }
-    }}
+    }
