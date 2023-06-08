@@ -28,9 +28,15 @@ pipeline {
                 pwsh 'write-host "Hello PowerShell"' 
             }
         }
-        stage('Ping Local Host') {
+        stage('Ping Local Host - Bash') {
             steps {
+                echo "Pinging Localhost with bash"
                 sh 'ping -c 5 127.0.0.1'
+            }
+        stage('Ping Local Host - PowerShell') {
+            steps {
+                echo "Pinging Localhost with PowerShell"
+                pwsh 'test-connection -TargetName localhost'
             }
         }
     }
