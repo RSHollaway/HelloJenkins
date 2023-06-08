@@ -15,7 +15,7 @@ pipeline {
                 echo "Build Number ${env.BUILD_NUMBER}..."
                 echo "Jenkins URL ${env.JENKINS_URL}..."
                 echo "Workspace ${env.WORKSPACE}..."
-                powershell ping 127.0.0.1
+                pwsh ping 127.0.0.1
                
             }
         }
