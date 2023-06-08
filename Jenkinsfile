@@ -50,4 +50,4 @@ pipeline {
                                [pattern: '.propsfile', type: 'EXCLUDE']])
         }
         }
-    }
+    }}
