@@ -10,7 +10,7 @@ pipeline {
             steps {
                 cleanWs()
                 checkout scm
-                echo 'Building ${env.JOB_NAME}...' 
+                echo "Building ${env.JOB_NAME}..."
             }
         }
     }
