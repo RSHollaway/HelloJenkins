@@ -11,6 +11,10 @@ pipeline {
                 cleanWs()
                 checkout scm
                 echo "Building ${env.JOB_NAME}..."
+                echo "Build ID ${env.BUILD_ID}..."
+                echo "Build Number ${env.BUILD_NUMBER}..."
+                echo "Jenkins URL ${env.JENKINS_URL}..."
+                echo "Workspace ${env.WORKSPACE}..."
             }
         }
     }
