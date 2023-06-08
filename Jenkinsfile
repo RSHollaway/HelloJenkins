@@ -40,7 +40,7 @@ pipeline {
         stage('Get Local Host - PowerShell') {
             steps {
                 echo "Get Localhost with PowerShell"
-                pwsh 'get-host | select "Name"'
+                pwsh 'get-host'
             }
         }
         stage('Get Uptime - PowerShell') {
