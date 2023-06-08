@@ -43,6 +43,12 @@ pipeline {
                 pwsh 'get-host'
             }
         }
+        stage('Get Uptime - PowerShell') {
+            steps {
+                echo "Get Uptime with PowerShell"
+                pwsh 'get-uptime'
+            }
+        }
     }
     post {
         always {
