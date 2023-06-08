@@ -19,8 +19,6 @@ pipeline {
                 echo "Build Number ${env.BUILD_NUMBER}..."
                 echo "Jenkins URL ${env.JENKINS_URL}..."
                 echo "Workspace ${env.WORKSPACE}..."
-                pwsh 'write-host "Hello PowerShell"'
-               
             }
         }
         stage('Perform Commands') {
@@ -49,5 +47,5 @@ pipeline {
                     patterns: [[pattern: '.gitignore', type: 'INCLUDE'],
                                [pattern: '.propsfile', type: 'EXCLUDE']])
         }
-        }
     }
+}
