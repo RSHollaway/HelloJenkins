@@ -31,6 +31,11 @@ pipeline {
                 echo "Pinging Localhost with bash"
                 sh 'ping -c 5 127.0.0.1'
             }}
+        stage('Sleep') {
+            steps {
+                echo "Sleeping for 10 Seconds"
+                sleep 10
+            }}
         stage('Ping Local Host - PowerShell') {
             steps {
                 echo "Pinging Localhost with PowerShell"
