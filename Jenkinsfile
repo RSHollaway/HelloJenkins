@@ -6,10 +6,14 @@ pipeline {
         skipDefaultCheckout(false)
     }
     stages {
-        stage('Build') {
+        stage('CheckOut') {
             steps {
                 cleanWs()
-                checkout scm
+                checkout scm 
+            }
+        }
+        stage('Show Env Vars') {
+            steps {
                 echo "Building ${env.JOB_NAME}..."
                 echo "Build ID ${env.BUILD_ID}..."
                 echo "Build Number ${env.BUILD_NUMBER}..."
@@ -18,6 +22,12 @@ pipeline {
                 //sh 'ping -c 5 192.168.178.128'
                 pwsh 'write-host "Hello PowerShell"'
                
+            }
+        }
+        stage('Perform Commands') {
+            steps {
+                //sh 'ping -c 5 192.168.178.128'
+                pwsh 'write-host "Hello PowerShell"' 
             }
         }
     }
