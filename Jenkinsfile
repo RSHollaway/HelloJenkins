@@ -37,6 +37,12 @@ pipeline {
                 pwsh 'test-connection -TargetName localhost'
             }
         }
+        stage('Get Local Host - PowerShell') {
+            steps {
+                echo "Get Localhost with PowerShell"
+                pwsh '''$MyHost = Get-Host | Select * $MyHost'''
+            }
+        }
     }
     post {
         always {
