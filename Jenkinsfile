@@ -19,15 +19,18 @@ pipeline {
                 echo "Build Number ${env.BUILD_NUMBER}..."
                 echo "Jenkins URL ${env.JENKINS_URL}..."
                 echo "Workspace ${env.WORKSPACE}..."
-                //sh 'ping -c 5 192.168.178.128'
                 pwsh 'write-host "Hello PowerShell"'
                
             }
         }
         stage('Perform Commands') {
             steps {
-                //sh 'ping -c 5 192.168.178.128'
                 pwsh 'write-host "Hello PowerShell"' 
+            }
+        }
+        stage('Ping Local Host') {
+            steps {
+                sh 'ping -c 5 127.0.0.1'
             }
         }
     }
