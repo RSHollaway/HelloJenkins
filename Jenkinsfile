@@ -16,6 +16,7 @@ pipeline {
                 echo "Jenkins URL ${env.JENKINS_URL}..."
                 echo "Workspace ${env.WORKSPACE}..."
                 //sh 'ping -c 5 192.168.178.128'
+                pwsh 'write-host "Hello PowerShell"'
                
             }
         }
