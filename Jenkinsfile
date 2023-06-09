@@ -14,6 +14,7 @@ pipeline {
         }
         stage('Show Env Vars') {
             steps {
+                echo
                 sleep 2
                 echo "Building ${env.JOB_NAME}..."
                 sleep 2
