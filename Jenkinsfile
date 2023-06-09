@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+//pull test
 
 pipeline {
     agent any
