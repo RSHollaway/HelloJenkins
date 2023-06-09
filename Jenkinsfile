@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clean WorkSpace') {
             steps {
-                cleanWs()
+                cleanWs deleteDirs: true
                 checkout scm 
             }
         }
