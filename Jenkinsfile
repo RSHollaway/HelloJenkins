@@ -15,7 +15,7 @@ pipeline {
         stage('Show Env Vars') {
             steps {
                 sleep 2
-                //ansible.builtin.debug: msg="Starting Windows baseline playbook..."
+                ansible.builtin.debug: msg="Starting Windows baseline playbook..."
                 echo "Building ${env.JOB_NAME}..."
                 sleep 2
                 echo "Build ID ${env.BUILD_ID}..."
