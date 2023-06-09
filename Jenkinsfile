@@ -14,11 +14,21 @@ pipeline {
         }
         stage('Show Env Vars') {
             steps {
+                sleep 2
                 echo "Building ${env.JOB_NAME}..."
+                echo
+                sleep 2
                 echo "Build ID ${env.BUILD_ID}..."
+                echo
+                sleep 2
                 echo "Build Number ${env.BUILD_NUMBER}..."
+                echo
+                sleep 2
                 echo "Jenkins URL ${env.JENKINS_URL}..."
+                echo
+                sleep 2
                 echo "Workspace ${env.WORKSPACE}..."
+                echo
             }
         }
         stage('Perform Commands') {
